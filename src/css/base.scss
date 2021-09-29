@@ -1,6 +1,39 @@
-/* This is an example of how to import a partial scss file*/
 @import '_variables';
+@import '_mixins';
 
 body {
-  background: $primary-background;
+  background-color: $primary-background-color-maroon;
+  color: $secondary-background-color-gold;
+  text-align: center;
+  font-family: $primary-font;
+}
+
+header {
+  background-color: $accent-color-cream;
+  color: black;
+  text-align: center;
+  font-family: $secondary-font;
+  width: auto;
+}
+
+footer {
+  background-color: black;
+  color: $secondary-background-color-gold;
+  text-align: center;
+  font-family: $secondary-font;
+  height: auto;
+}
+
+.main-login {
+  color: black;
+  background-color: $secondary-background-color-gold;
+}
+
+.customer-info-view {
+  color: black;
+  background-color: $secondary-background-color-gold;
+}
+
+.hidden {
+  display: none;
 }
