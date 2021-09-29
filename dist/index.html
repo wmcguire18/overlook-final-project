@@ -49,28 +49,19 @@
         <section class="new-booking-search">
           <label for="newTripDateInput">Select a booking date: </label>
           <input type="date" id="newTripDateInput" name="newTripDateInput" value="2021-09-29" min="2011-09-30" max="2022-09-31">
-          <button type="submit" id="searchNewBookings" class="btn btn-blue">Search</button>
+          <button type="submit" id="searchNewBookings" class="search-new-bookings">Search</button>
         </section>
-        <section class="new-booking-results">
-          <div class="hidden room-filters">
+          <div class="room-filters hidden" id="roomFilters">
               <p>Filter by room type:</p>
-              <input type="radio" id="single" name="filters" value="single room">
-              <label for="single">Single Room</label> <br>
-              <input type="radio" id="junior" name="filters" value="junior suite">
-              <label for="junior">Junior Suite</label> <br>
-              <input type="radio" id="suite" name="filters" value="suite">
-              <label for="suite">Suite</label> <br>
-              <input type="radio" id="residential" name="filters" value="residential suite">
-              <label for="residential">Residential Suite</label> <br>
+            <select class="room-type-select" id="roomTypeSelect" name="room types" aria-label="room type select">
+              <option value="single room">Single Room</option>
+              <option value="suite">Suite</option>
+              <option value="residential suite">Residential Suite</option>
+              <option value="junior suite">Junior Suite</option>
+
+            </select>
           </div>
-          <section id="moneySpent">
-            <p>Accumulated Patronage:</p>
-            <p id="accumulatedPatronage" class="acc-patronage"></p>
-          </section>
-          <div id=newBookingSearchResults>
-            <h2 class="before-search">Select Date:</h2>
-          </div>
-        </section>
+          <div class="available-rooms-container" id="availableRoomsContainer"> </div>
       </div>
     </section>
   </div>

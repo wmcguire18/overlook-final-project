@@ -13,6 +13,11 @@ import domUpdates from './domUpdates';
 import '/Users/williammcguire/overlook-final-project/src/images/gotham.png';
 import '/Users/williammcguire/overlook-final-project/src/images/turing-logo.png';
 
+let roomTypeSelect = document.querySelector('.room-type-select');
+let searchNewBookings = document.querySelector('#searchNewBookings');
+let newTripDateInput = document.querySelector('#newTripDateInput');
+let availableRoomsContainer = document.querySelector('#availableRoomsContainer');
+let roomFilters = document.querySelector('#roomFilters');
 let futureBookingContainer = document.querySelector('#futureBookingContainer');
 let totalExpenditures = document.querySelector('#totalExpenditures');
 let pastBookingContainer = document.querySelector('#pastBookingContainer');
@@ -33,7 +38,11 @@ let fetchedCustomers = [];
 let fetchedRooms = [];
 let fetchedBookings = [];
 let currentCustomer;
+let selectedDate;
+let availableRooms = [];
 
+availableRoomsContainer.addEventListener('click', bookRoom);
+searchNewBookings.addEventListener('click', findAvailableRooms);
 submitLoginBtn.addEventListener('click', userValidation);
 newBookingBtn.addEventListener('click', displayNewBookings);
 
@@ -164,4 +173,36 @@ function populateBookings(bookings, rooms) {
   function displayNewBookings() {
     hide(bookingTracker);
     show(newBookingContainer);
+    show(roomFilters);
+  };
+
+  function findAvailableRooms() {
+    availableRoomsContainer.innerHTML = ``;
+    selectedDate = newTripDateInput.value;
+    selectedDate.split("-").join("/");
+    let dateAvailableRooms =
+      fetchedRooms.forEach( room => availableRooms.push(room))
+    let unavailableDates = fetchedBookings.filter(booking => {
+        return booking.date == selectedDate
+
+    })
+    let openRooms = fetchedRooms.filter(room => {
+      return room.number !== unavailableDates.roomNumber;
+    })
+    let finalRoom = openRooms.filter(room => {
+      return room.roomType == roomTypeSelect.value
+    })
+    let displayedRooms = finalRoom.reduce((acc, room) => {
+      acc += `<p>${room.number}</p> <button type="submit" id="${room.number}" class="book-now">Book Now!</button>`
+      return acc
+    },"")
+    availableRoomsContainer.innerHTML = displayedRooms
+  };
+
+  function bookRoom() {
+    let userID = currentCustomer.id;
+    let date = newTripDateInput.value.split("-").join("/");
+    let roomNumber = parseInt(event.target.id);
+    console.log(newTripDateInput.value);
+    addNewBooking(parseInt(userID), date, roomNumber);
   };
