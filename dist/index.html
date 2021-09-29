@@ -4,13 +4,76 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webpack Starter Kit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+  <title>Gotham Hotel and Lounge</title>
 </head>
+<header>
+  <h1>Gotham</h1>
+  <h2>Hotel and Lounge</h2>
+  <h3>1939 Kane Blvd</h3>
+</header>
 <body>
-  <img src="./images/turing-logo.png" alt="turing logo">
-  
-  <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
+  <div id="mainLogin" class="main-login">
+    <h2>Please Login:</h2>
+    <p>Username:</p>
+    <input type="text" id="usernameInput">
+    <p>Password:</p>
+    <input type="password" id="passwordInput">
+    <br>
+    <button type="submit" id="submitLoginBtn" class="submit-login-button">Login</button>
+  </div>
+  <div id="customerInfoView" class="customer-info-view hidden">
+    <nav>
+      <div class="user-info">
+        <p id="userName">User-name</p>
+      </div>
+      <button id="navHome">Home</button>
+      <button id="navNewBooking" >Place a Booking</button>
+    </nav>
+    <section id="contentContainer" class="cc">
+      <h1 id="greetingMessage">Welcome, New Friends and Old!</h1>
+      <div class="bookings-container">
+        <section id="bookings">
+          <article id="bookingTracker">
+            <h4 id="bc-date">Date: </h4>
+            <h4 id="bc-date">Room: </h4>
+          </article>
+        </section>
+      </div>
+      <div class="new-bookings-container hidden" id="newBookingContainer">
+        <section class="new-booking-search">
+          <label for="newTripDateInput">Select a booking date: </label>
+          <input type="date" id="newTripDateInput" name="newTripDateInput" value="2021-09-29" min="2011-09-30" max="2022-09-31">
+          <button type="submit" id="searchNewBookings" class="btn btn-blue">Search</button>
+        </section>
+        <section class="new-booking-results">
+          <div class="hidden room-filters">
+              <p>Filter by room type:</p>
+              <input type="radio" id="single" name="filters" value="single room">
+              <label for="single">Single Room</label> <br>
+              <input type="radio" id="junior" name="filters" value="junior suite">
+              <label for="junior">Junior Suite</label> <br>
+              <input type="radio" id="suite" name="filters" value="suite">
+              <label for="suite">Suite</label> <br>
+              <input type="radio" id="residential" name="filters" value="residential suite">
+              <label for="residential">Residential Suite</label> <br>
+          </div>
+          <section id="moneySpent">
+            <p>Accumulated Patronage:</p>
+            <p id="accumulatedPatronage" class="acc-patronage"></p>
+          </section>
+          <div id=newBookingSearchResults>
+            <h2 class="before-search">Select Date:</h2>
+          </div>
+        </section>
+      </div>
+    </section>
+    <footer>
+      <h3>Since 1898, the standard for luxury, the world over...</h3>
+    </footer>
+  </div>
   <script src="bundle.js"></script>
-
-</body>
+  </body>
 </html>
