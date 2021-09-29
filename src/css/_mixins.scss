@@ -1,0 +1,5 @@
+
+@mixin add-hover-state($cursor-state) {
+  cursor: $cursor-state;
+  transform: scale(1.04);
+}
