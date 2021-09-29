@@ -1,105 +1,74 @@
-# Webpack Starter Kit
+# WHAT’S COOKIN’  
+Mod 2, GROUP PROJECT (PART 2)
 
-## Clone This Repo
+## Table of Contents  
+ - [Abstract](#abstract)  
+ - [Technologies](#technologies)
+ - [Install + Setup](#set-up)  
+ - [Illustrations](#illustrations)    
+ - [Contributors](#contributors)  
+ - [Wins](#wins)  
+ - [Challenges + Improvements](#challenges-+-Improvements)  
+ - [Project Specs](#project-specs)
 
-That's right, _clone_ not fork. You will use this repo multiple times, but you can only fork a repository once. So here is what you need to do to clone the repo and still be able to push changes to your repo:
+## Abstract  
 
-1. Clone down this repo. Since you don't want to name your project "webpack-starter-kit", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
-1. Remove the default remote: `git remote rm origin` (notice that `git remote -v` not gives you back nothing)
-1. Create a new repo on GitHub with the name of `[what you want to name the repo]` to be consistent with naming
-1. Copy the address that you would use to clone down this repo - something like `git@github.com:...`
-1. Add this remote to your cloned down repo: `git remote add origin [address you copied in the previous step]` - do not include the brackets
+WHAT’S COOKIN is an interactive virtual repository of recipe data and instructions that makes selecting, compiling, and preparing your favorite foods as easy as a click of the mouse or a touch of the thumb! A user can use this site to browse a collection of recipes, save recipes to Favorites or a separte library called Recipes to Cook. A user also has access to a digital pantry where they can see and add to a list of ingredients in their personal pantry. This allows a user to receive feedback on individual recipes as to whether or not they have the ingredients necessary to cook that particular dish.
 
-Now try to commit something and push it up to your new repo. If everything is setup correctly, you should see the changes on GitHub.
+## Technologies  
 
-## Setup
+ - Javascript
+ - CSS/SCSS
+ - HTML
+ - Herokuapp for API data
+ - Mocha and Chai for testing
+ - WAI-ARIA
+ - WebPack
+ - node
+ - Atom
+ - Loom
 
-After one person has gone through the steps of cloning down this repo and editing the remote, everyone should clone down the repo. 
+## Install + Setup
 
-Then install the library dependencies. Run:
+Clone down this repo![codebutton](https://i.imgur.com/j8vOD1D.png)
 
-```bash
-npm install
-```
+CD into the directory
+`cd whats-cookin-starter-kit`
 
-To verify that it is setup correctly, run `npm start` in your terminal. Go to `http://localhost:8080/` and you should see a page with some `h1` text, Turing logo image and a beautiful gradient background. If that's the case, you're good to go. Enter `control + c` in your terminal to stop the server at any time.
+Run NPM install  
+`npm install`
 
-## Where to Add Your Code
+Run NPM start  
+`npm start`
 
-### JavaScript
+Copy the local host info into your internet browser, and enjoy!
+(by default visit [here](http://localhost:8080))
 
-You have to be very intentional with where you add your feature code. This repo uses a tool called [webpack](https://webpack.js.org/) to combine many JavaScript files into one big file. Webpack enables you to have many, separate JavaScript files to keep your code organized and readable. Webpack expects all of your code files to be in a specific place, or else it doesn't know how to combine them all behind the scenes.
+## Illustrations  
 
-**Create all of your feature code files in the `src` directory.**
+[DEMO VIDEO LINKED HERE](https://youtu.be/T93U62cjrhE)
 
-Since code is separated into multiple files, you need to use the `import` and `export` syntax to share code across file.
+## Contributors:  
 
-Here is a video that walks through some information about [import and export](https://www.youtube.com/watch?v=_3oSWwapPKQ). There are a lot of resources out there about `import` and `export`, and resources will sometimes call them `ES6 modules`. It's something you will see in React and beyond.
+[Joshua Horner](https://github.com/jphorner)  
+[William McGuire](https://github.com/wmcguire18)  
+[Nate Sheridan](https://github.com/natesheridan)  
+[Renee Swick-Ziller](https://github.com/reneeswick)
 
-### HTML
+## Wins  
 
-Add the HTML you need in the `index.html` file in the `./dist` directory. There is some boilerplate HTML that exists from the start that you can modify.
+ - Organizing DOM updates into their own file
+ - Github Project Board
+ - SCSS and Grid display
+ - The pantry display's ability to be scrollable
+ - Heroku for the deployed API
+ - Successful GET and POST fetch requests
 
-### CSS (SCSS/SASS)
+## Challenges + Improvements  
 
-This project is setup to use SCSS/Sass files by default instead of your regular CSS files. Add your SCSS files in the `src/css` directory. There is a `base.scss` file already there, but you can change this file and add multiple SCSS files in this directory.
+ - Correctly importing and exporting files
+ - While the POST request was sending a successful responsive, we were not seeing the update in the datao n the back-end. After consulting with another developer, we found the data being sent was a string rather than a number which resolved the issue. In future iterations, we would want to update the DOM to display the pantry with that updated information.
+ - Group morale was under an incredible amount of stress with balancing final assessments, new lesson material, and completing project. This lead to some shortcuts     in code and some user stories not being fulfilled.
 
-This might sound weird, but you need to `import` your SCSS files in the JavaScript entry file (`scripts.js`) for the styles to be applied to your HTML. The example `base.scss` file has already been imported in the JavaScript entry file as an example.
-
-### Images
-
-Add your image files in the `src/images` directory. Similar to CSS files, you need to `import` image files in the JavaScript entry file (`scripts.js`). Then go into the HTML and add an `img` element with the `src` attribute pointing to the `images` directory. There is an example in the `index.html` file for you to see.
-
-## How to View Your Code in Action
-
-In the terminal, run:
-
-```bash
-npm start
-```
-
-You will see a bunch of lines output to your terminal. One of those lines will be something like:
-
-```bash
-Project is running at http://localhost:8080/
-```
-
-Go to `http://localhost:8080/` in your browser to view your code running in the browser.
-
----
-
-## Test Files Organization
-
-Similar to feature code, your test code needs to be put in a specific place for it to run successfully.
-
-**Put all of your test files in the `test` directory.** As a convention, all test filenames should end with `-test.js`. For instance: `box-test.js`.
-
-## Running Your Tests
-
-Run your test suite using the command:
-
-```bash
-npm test
-```
-
-The test results will output to the terminal.
-
----
-
-## Linting Your Code
-
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit - the linter is still running successfully.
-
-Your linter will look at the JavaScript files you have within the `src` directory and the `test` directory. 
-
-## Webpack?
-
-If you look in the `package.json` file, you'll see one of the library dependencies called `webpack`. If you're interested in learning more about what Webpack is and how it works behind the scenes, take a look through the [Webpack configuration documentation](https://webpack.js.org/concepts/).
-
-## Deploying to GitHub Pages
-
-_If you are finished with the functionality and testing of your project_, then you can consider deploying your project to the web! This way anyone can play it without cloning down your repo.
-
-[GitHub Pages](https://pages.github.com/) is a great way to deploy your project to the web. Don't worry about this until your project is free of bugs and well tested!
-
-If you _are_ done, you can follow [this procedure](./gh-pages-procedure.md) to get your project live on GitHub Pages.
+## Project Specs
+Turing Project Specs can be found [HERE](https://frontend.turing.edu/projects/whats-cookin-part-one.html)
