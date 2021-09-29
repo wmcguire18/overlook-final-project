@@ -18,22 +18,22 @@ describe('Test data', function() {
   });
 
   it('should be a function', () => {
-    assert(Room).to.be.a('function');
+    assert.isFunction(Room);
   });
 
   it('should instantiate testUser  as a new Customer', () => {
-    assert(testRoom).to.be.an.instanceof(Room);
+    assert.instanceOf(testRoom, Room);
   });
 
   it('should have a number, roomType, bedType, numBeds and cost', () => {
-    assert(testRoom.number).to.equal(20);
-    assert(testUser.roomType).to.equal('residential suite');
-    assert(testRoom.bedType).to.equal('queen');
-    assert(testRoom.numBeds).to.equal(1);
-    assert(testRoom.costPerNight).to.equal(343.93);
+    assert.equal(testRoom.number, 20);
+    assert.equal(testRoom.roomType, 'residential suite');
+    assert.equal(testRoom.bedType, 'queen');
+    assert.equal(testRoom.numBeds, 1);
+    assert.equal(testRoom.costPerNight, 343.93);
   })
 
   it('should have customer bookings', () => {
-    assert(testUser.bookings[0]).to.equal(testBooking);
+    assert.equal(testUser.bookings[0], testBooking);
   })
 });

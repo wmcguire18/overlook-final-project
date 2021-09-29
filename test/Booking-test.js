@@ -1,5 +1,5 @@
 import chai from 'chai';
-const expect = chai.expect;
+const assert = chai.assert;
 import Customer from '../src/classes/Customer.js';
 import Room from '../src/classes/Room.js';
 import Booking from '../src/classes/Booking.js';
@@ -18,17 +18,17 @@ describe('Test data', function() {
   });
 
   it('should be a function', () => {
-    assert(Booking).to.be.a('function');
+    assert.isFunction(Booking);
   });
 
   it('should instantiate testBooking as a new Booking', () => {
-    assert(testBooking).to.be.an.instanceof(Booking);
+    assert.instanceOf(testBooking, Booking);
   });
 
   it('should have an ID, userID, date, and roomNumber', () => {
-    assert(testBooking.id).to.equal('22847');
-    assert(testBooking.userID).to.equal(1);
-    assert(testBooking.date).to.equal('01/11/20');
-    assert(testBooking.roomNumber).to.equal(20);
+    assert.equal(testBooking.id, '22847');
+    assert.equal(testBooking.userID, 1);
+    assert.equal(testBooking.date, '01/11/20');
+    assert.equal(testBooking.roomNumber, 20);
   })
 });

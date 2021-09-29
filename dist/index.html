@@ -25,13 +25,14 @@
     <button type="submit" id="submitLoginBtn" class="submit-login-button">Login</button>
     <p class="login-error hidden"id="logInError"></p>
   </div>
+  <img id="cityPicture" class="city-picture" src="./images/gotham.png" alt="picture of the city">
   <div id="customerInfoView" class="customer-info-view hidden">
     <nav>
-      <div class="user-info">
-        <p id="userName">User-name</p>
+      <div id ="userInfo" class="user-info">
+        <h1 id="userName">User-name</h1>
       </div>
-      <button id="navHome">Home</button>
-      <button id="navNewBooking" >Place a Booking</button>
+      <button id="navHome" onClick="window.location.reload(true)">Home</button>
+      <button id="newBookingBtn" >Place a Booking</button>
     </nav>
     <section id="contentContainer" class="cc">
       <h1 id="greetingMessage">Welcome, New Friends and Old!</h1>
@@ -43,7 +44,7 @@
           </article>
         </section>
       </div>
-      <div class="new-bookings-container hidden" id="newBookingContainer">
+      <div class="new-booking-container hidden" id="newBookingContainer">
         <section class="new-booking-search">
           <label for="newTripDateInput">Select a booking date: </label>
           <input type="date" id="newTripDateInput" name="newTripDateInput" value="2021-09-29" min="2011-09-30" max="2022-09-31">
