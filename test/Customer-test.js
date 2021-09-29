@@ -18,19 +18,19 @@ describe('Test data', function() {
   });
 
   it('should be a function', () => {
-    assert(Customer).to.be.a('function');
+    assert.isFunction(Customer);
   });
 
   it('should instantiate testUser  as a new Customer', () => {
-    assert(testUser).to.be.an.instanceof(Customer);
+    assert.instanceOf(testUser, Customer);
   });
 
   it('should have a name and an ID', () => {
-    assert(testUser.name).to.equal('testUser');
-    assert(testUser.id).to.equal(1);
+    assert.equal(testUser.name,'Leatha Ullrich');
+    assert.equal(testUser.id, 1);
   })
 
   it('should have customer bookings', () => {
-    assert(testUser.bookings[0]).to.equal(testBooking);
+    assert.equal(testUser.bookings[0], testBooking);
   })
 });
