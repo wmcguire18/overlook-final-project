@@ -23,6 +23,21 @@ footer {
   font-family: $secondary-font;
   height: auto;
 }
+.booking-tracker {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 20%);
+  height: 20rem;
+}
+
+.booking-tracker-card {
+  background-color: black;
+  color: $accent-color-cream;
+  border-radius: 10px;
+  margin: 5px;
+  overflow-y: scroll;
+  height: 80%;
+}
 
 .main-login {
   color: black;
@@ -32,6 +47,13 @@ footer {
 .customer-info-view {
   color: black;
   background-color: $secondary-background-color-gold;
+}
+
+button {
+  font-family: $secondary-font;
+  background-color: black;
+  color:$secondary-background-color-gold;
+  margin: 5px;
 }
 
 .hidden {
