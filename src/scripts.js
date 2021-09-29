@@ -21,8 +21,9 @@ let submitLoginBtn = document.querySelector('#submitLoginBtn');
 let fetchedCustomers = [];
 let fetchedRooms = [];
 let fetchedBookings = [];
+let currentCustomer;
 
-submitLoginBtn.addEventListener('click', userValidation)
+submitLoginBtn.addEventListener('click', userValidation);
 
 function hide(element){
   element.classList.add('hidden')
@@ -32,7 +33,7 @@ function show(element){
   element.classList.remove('hidden')
 };
 
-function getData() {
+function getData(userID) {
   let fetchedData = Promise.all(
     [
       getAllCustomers(),
@@ -40,11 +41,11 @@ function getData() {
       getAllBookings(),
     ]
   )
-  .then( data => parseData(data))
+  .then(data => parseData(data, userID))
   .catch(error => console.warn(error))
 }
 
-function parseData(data) {
+function parseData(data, userID) {
   let customerData = data[0].customers;
   customerData.forEach(customer => {
     fetchedCustomers.push(customer);
@@ -57,37 +58,43 @@ function parseData(data) {
   bookingData.forEach(booking => {
     fetchedBookings.push(booking);
   })
-instantiateClasses()
+instantiateClasses(userID)
 return
 };
 
-function instantiateClasses() {
-  let customers = allCustomers.map((customer) => {
+function instantiateClasses(userID) {
+  let customers = fetchedCustomers.map((customer) => {
     return new Customer(customer.id, customer.name);
   });
-  let rooms = allRooms.map((room) => {
+  let rooms = fetchedRooms.map((room) => {
     return new Room(room.number, room.roomType, room.bedType, room.numBeds, room.costPerNight);
   });
-  let bookings = allBookings.map((booking) => {
+  let bookings = fetchedBookings.map((booking) => {
     return new Booking(booking.id, booking.userID, booking.date, booking.roomNumber)
   })
- //helperfunction goes here
+  findCurrentCustomer(customers, userID);
+  console.log(customers);
 };
 
 function userValidation() {
   const usernameInput = document.getElementById('usernameInput');
   const passwordInput = document.getElementById('passwordInput');
-  const loginError = document.getElementById('loginError');
   let userName = usernameInput.value;
   let userID = Number(userName.split('customer')[1]);
   const validateUser = () => {}
   if (userID < 50 && userID > 0 && passwordInput.value === 'overlook2021') {
     hide(mainLogin);
     show(customerInfoView);
-    getData()
+    getData(userID)
   } else if (userID > 50 || userID < 0 || !userID) {
     logInError.innerHTML = 'Invalid user name, please try again.'
   } else if (passwordInput.value != 'overlook2021') {
     logInError.innerHTML = 'Invalid password, please try again.'
   }
+}
+
+function findCurrentCustomer(customers, userID) {
+  currentCustomer = customers.find(customer => customer.id === userID
+  )
+  console.log(currentCustomer);
 }
