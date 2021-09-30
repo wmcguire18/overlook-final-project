@@ -1,5 +1,5 @@
-# WHAT’S COOKIN’  
-Mod 2, GROUP PROJECT (PART 2)
+# OVERLOOK
+Mod 2, FINAL PROJECT
 
 ## Table of Contents  
  - [Abstract](#abstract)  
@@ -18,22 +18,20 @@ WHAT’S COOKIN is an interactive virtual repository of recipe data and instruct
 ## Technologies  
 
  - Javascript
- - CSS/SCSS
+ - SCSS
  - HTML
- - Herokuapp for API data
  - Mocha and Chai for testing
  - WAI-ARIA
  - WebPack
- - node
- - Atom
- - Loom
+ - QuickTime
 
 ## Install + Setup
 
-Clone down this repo![codebutton](https://i.imgur.com/j8vOD1D.png)
+Clone down this repo![codebutton](https://github.com/turingschool-examples/webpack-starter-kit)
+You'll need this one too![codebutton](https://github.com/turingschool-examples/overlook-api/tree/main/data)
 
 CD into the directory
-`cd whats-cookin-starter-kit`
+`cd webpack-starter-kit`
 
 Run NPM install  
 `npm install`
@@ -41,34 +39,32 @@ Run NPM install
 Run NPM start  
 `npm start`
 
+Then open a second Terminal tab, and run the same procedure with the API.
+
 Copy the local host info into your internet browser, and enjoy!
 (by default visit [here](http://localhost:8080))
 
 ## Illustrations  
 
-[DEMO VIDEO LINKED HERE](https://youtu.be/T93U62cjrhE)
+[DEMO VIDEO LINKED HERE](https://www.youtube.com/watch?v=8npvivY41Ec)
 
 ## Contributors:  
 
-[Joshua Horner](https://github.com/jphorner)  
 [William McGuire](https://github.com/wmcguire18)  
-[Nate Sheridan](https://github.com/natesheridan)  
-[Renee Swick-Ziller](https://github.com/reneeswick)
+
 
 ## Wins  
 
- - Organizing DOM updates into their own file
- - Github Project Board
- - SCSS and Grid display
- - The pantry display's ability to be scrollable
- - Heroku for the deployed API
+ - SCSS is clean and clear
+ - GARIA tags applied
+ - Test suites and classes, clear and simple
  - Successful GET and POST fetch requests
+ - I never gave up
 
 ## Challenges + Improvements  
 
- - Correctly importing and exporting files
- - While the POST request was sending a successful responsive, we were not seeing the update in the datao n the back-end. After consulting with another developer, we found the data being sent was a string rather than a number which resolved the issue. In future iterations, we would want to update the DOM to display the pantry with that updated information.
- - Group morale was under an incredible amount of stress with balancing final assessments, new lesson material, and completing project. This lead to some shortcuts     in code and some user stories not being fulfilled.
+ - Serious time drain on minor technical faults.
+ - Couldn't get embedded video to work
 
 ## Project Specs
-Turing Project Specs can be found [HERE](https://frontend.turing.edu/projects/whats-cookin-part-one.html)
+Turing Project Specs can be found [HERE](https://frontend.turing.edu/projects/overlook.html)
