@@ -15,43 +15,43 @@
   <h3>1939 Kane Blvd</h3>
 </header>
 <body>
-  <div id="mainLogin" class="main-login">
+  <div id="mainLogin" class="main-login" aria-labelledby= "main login">
     <h2>Please Login:</h2>
     <p>Username:</p>
-    <input type="text" id="usernameInput">
+    <input type="text" id="usernameInput"aria-labelledby= "username">
     <p>Password:</p>
-    <input type="password" id="passwordInput">
+    <input type="password" id="passwordInput"aria-labelledby= "password">
     <br>
-    <button type="submit" id="submitLoginBtn" class="submit-login-button">Login</button>
-    <p class="login-error hidden"id="logInError"></p>
+    <button type="submit" id="submitLoginBtn" class="submit-login-button"aria-labelledby= "login submit">Login</button>
+    <p class="login-error hidden"id="logInError" aria-labelledby= "error message"></p>
   </div>
-  <img id="cityPicture" class="city-picture" src="./images/gotham.png" alt="picture of the city">
-  <div id="customerInfoView" class="customer-info-view hidden">
+  <img id="cityPicture" class="city-picture" src="./images/gotham.png" alt="picture of the city" aria-labelledby= "picture of downtown">
+  <div id="customerInfoView" class="customer-info-view hidden"aria-labelledby= "customer info container">
     <nav>
-      <div id ="userInfo" class="user-info">
+      <div id ="userInfo" class="user-info"aria-labelledby= "user info">
         <h1 id="userName">User-name</h1>
       </div>
-      <button id="navHome" onClick="window.location.reload(true)">Home</button>
-      <button id="newBookingBtn" >Place a Booking</button>
+      <button id="navHome" onClick="window.location.reload(true)" aria-labelledby= "home button">Home</button>
+      <button id="newBookingBtn" aria-labelledby= "new booking button" >Place a Booking</button>
     </nav>
-    <section id="contentContainer" class="cc">
-      <h1 id="greetingMessage">Welcome, New Friends and Old!</h1>
-      <div class="bookings-container">
+    <section id="contentContainer" class="content-container" aria-labelledby= "content container">
+      <h1 id="greetingMessage" aria-labelledby= "greeting">Welcome, New Friends and Old!</h1>
+      <div class="bookings-container"aria-labelledby= "bookings container">
         <section id="bookings">
-          <article class="booking-tracker" id="bookingTracker">
+          <article class="booking-tracker" id="bookingTracker" aria-labelledby= "booking tracker">
             <div class="booking-tracker-card" id="pastBookingContainer"></div>
             <div class="booking-tracker-card" id="futureBookingContainer"></div>
             <div class="booking-tracker-card" id="totalExpenditures"></div>
           </article>
         </section>
       </div>
-      <div class="new-booking-container hidden" id="newBookingContainer">
-        <section class="new-booking-search">
+      <div class="new-booking-container hidden" id="newBookingContainer" aria-labelledby= "new booking container">
+        <section class="new-booking-search" aria-labelledby= "new booking search">
           <label for="newTripDateInput">Select a booking date: </label>
           <input type="date" id="newTripDateInput" name="newTripDateInput" value="2021-09-29" min="2011-09-30" max="2022-09-31">
-          <button type="submit" id="searchNewBookings" class="search-new-bookings">Search</button>
+          <button type="submit" id="searchNewBookings" class="search-new-bookings" aria-labelledby= "search new bookings">Search</button>
         </section>
-          <div class="room-filters hidden" id="roomFilters">
+          <div class="room-filters hidden" id="roomFilters" aria-labelledby= "room filters">
               <p>Filter by room type:</p>
             <select class="room-type-select" id="roomTypeSelect" name="room types" aria-label="room type select">
               <option value="single room">Single Room</option>
@@ -61,7 +61,7 @@
 
             </select>
           </div>
-          <div class="available-rooms-container" id="availableRoomsContainer"> </div>
+          <div class="available-rooms-container" id="availableRoomsContainer"aria-labelledby= "available rooms"> </div>
       </div>
     </section>
   </div>
